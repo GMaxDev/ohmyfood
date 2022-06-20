@@ -26,6 +26,7 @@ body{
     @include basic_flex_column;
     align-items: center;
     width: 100%;
+    background-color: $head_color;
 }
 
 .head__logo img{
