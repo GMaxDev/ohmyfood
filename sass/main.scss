@@ -1,6 +1,7 @@
 // @import './vendors/css.scss';
 
 @import './utils/variables.scss';
+@import './utils/mixins.scss';
 
 @import './base/font.scss';
 
@@ -13,5 +14,58 @@
 // @import './themes/css.scss';
 
 body{
-    background-color: aqua;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family:'Roboto', sans-serif, 'Shrikhand', cursive, Arial;
+    width: 100%;
+    justify-content: center;
+}
+
+.head{
+    @include basic_flex_column;
+    align-items: center;
+    width: 100%;
+}
+
+.head__logo img{
+    
+    height: 40px;
+    margin: 20px 0;
+}
+
+.head__location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    color: $location_element_color;
+    box-shadow: inset 0 2px 7px grey;
+    background-color: $location_color;
+}
+
+.head__location > *{
+    padding: 0 5px;
+}
+
+.head__presentation{
+    @include basic_flex_column;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+
+.head__presentation__title{
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.head__presentation__paragraph{
+    font-size: 1.5rem;
+    font-weight: 300;
 }
