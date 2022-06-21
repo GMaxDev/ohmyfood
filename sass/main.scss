@@ -22,6 +22,11 @@ body{
     justify-content: center;
 }
 
+a{
+    text-decoration:none;
+    color: #000;
+}
+
 .head{
     @include basic_flex_column;
     align-items: center;
@@ -80,4 +85,21 @@ body{
 .btn__std{
     @include btn_basic;
     @include bg_degrade_diagonale ($secondary_color, $primary_color);
+}
+
+/*----------------------------------------------------------*/
+
+.main{
+    @include basic_flex_column;
+    // align-items: center;
+    width: 100%;
+    margin: 30px 20px 0 20px;
+}
+
+.main h3{
+    font-size: 2.2rem;
+}
+
+.main__functioning__btn{
+    background-color: $head_color;
 }
