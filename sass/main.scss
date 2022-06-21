@@ -26,6 +26,7 @@ body{
     @include basic_flex_column;
     align-items: center;
     width: 100%;
+    height: 500px;
     background-color: $head_color;
 }
 
@@ -58,15 +59,25 @@ body{
     @include basic_flex_column;
     align-items: center;
     text-align: center;
-    width: 70%;
+    width: 80%;
+}
+
+.head__presentation > *{
+    margin: 30px 0 0 0;
 }
 
 .head__presentation__title{
     font-size: 2rem;
     font-weight: 900;
+    width: 90%;
 }
 
 .head__presentation__paragraph{
     font-size: 1.5rem;
     font-weight: 300;
+}
+
+.btn__std{
+    @include btn_basic;
+    @include bg_degrade_diagonale ($secondary_color, $primary_color);
 }
