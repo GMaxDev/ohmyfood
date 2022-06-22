@@ -91,8 +91,10 @@ a{
 
 .main{
     @include basic_flex_column;
-    justify-content: space-between;
+    position: relative;
+    justify-content: space-around;
     width: 100%;
+    height: auto;
 }
 
 .main h3{
@@ -106,7 +108,7 @@ a{
 
 .main__functioning__list_btn{
     @include basic_flex_column;
-    // height: 450px;
+    height: auto;
 }
 
 .main__functioning__list_btn__btn{
@@ -161,7 +163,7 @@ a{
     position: relative;
     max-width: 100%;
     height: auto;
-    padding: 30px 20px;
+    padding: 30px 20px 80px 20px;
 
     background-color: $head_color;
 }
@@ -231,4 +233,44 @@ a{
 
 .main__restaurant__card__info__text h5{
     font-weight: 300;
+}
+
+/*--------------------------------------------------*/
+
+.footer{
+    @include basic_flex_column;
+    height: auto;
+    padding: 20px 20px;
+    background-color: $location_element_primary_color;
+
+    & h3{
+        font-family: 'Shrikhand', Arial;
+        font-size: 1.4rem;
+        font-weight: lighter;
+        margin: 10px 0 0 0;
+    }
+
+    & >*{
+        color: #fff;
+    }
+}
+
+.footer__nav{
+    @include basic_flex_column;
+    justify-content: space-between;
+    height: auto;
+    color: #fff;
+
+    & ul{
+        padding: 0;
+        & li{
+            list-style-type: none;
+            padding: 5px 0;
+
+            & a{
+                color: #fff;
+                font-size: 1.2rem;
+            }
+        }
+    }
 }
