@@ -1,8 +1,11 @@
+body{
+    margin: 0;
+}
+
 .head-menu{
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     height: 90px;
     background-color: $head_color;
 
@@ -31,14 +34,29 @@
 
 .main-menu{
     @include basic_flex_column;
-    width: 100%;
+    position: relative;
+    top: -50px;
     height: auto;
     padding: 0 20px;
 
-    top: 100px;
     border-radius: 20px 20px 0 0;
     background-color: $menu_list;
     object-fit: cover;
+
+    & h3{
+        text-transform: uppercase;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    &__name-plate{
+        width: 50px;
+        height: 4px;
+        margin: 10px 0;
+        background-color: $new_bg_color;
+
+    }
+
 
     &__top{
         display: flex;
@@ -49,34 +67,60 @@
         & h2{
             font-family: 'Shrikhand', cursive, Arial, Helvetica, sans-serif;
             font-weight: lighter;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
         }
     }
 
 
     &__meals{
         @include basic_flex_column;
-
-        & h3{
-            text-transform: uppercase;
-            font-weight: 300;
-            &::after{
-                border: green;
-            }
-        }
+        height: auto;
+        margin-bottom: 40px;
 
         &__card{
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            margin: 10px 0;
+
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0px 9px 19px -12px rgba(0,0,0,0.3);
 
             &__infos{
-                @include basic_flex_column;
-                justify-content: center;
+                display: flex;
+                width: 100%;
+                height: auto;
+                padding: 0 10px;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                &__txt{
+                    @include basic_flex_column;
+                    height: 85px;
+                    justify-content: center;
+
+                    & > *{
+                        margin: 2px 0;
+                    }
+
+                    & h4{
+                        font-size: 1.4rem;
+                    }
+
+                    & p{
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__price{
+                    position: relative;
+                    bottom: 15px;
+                    right: 15px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
             }
         }
     }
