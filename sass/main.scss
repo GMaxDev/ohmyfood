@@ -1,13 +1,11 @@
-// @import './vendors/css.scss';
+@import "./utils/variables";
+@import "./utils/mixins";
 
-@import './utils/variables.scss';
-@import './utils/mixins.scss';
-
-@import './base/font.scss';
+@import "./base/font";
 
 // @import './layout/css.scss';
 
-@import './pages/menu.scss';
+@import "./pages/menu";
 
 // @import './component/css.scss';
 
