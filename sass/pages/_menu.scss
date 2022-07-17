@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+            transform: rotate(360deg);
+        }
+}
+
 .appears-with-opacity {
     animation: opacity 1.5s both;
     transition: transform 330ms ease-in-out;
@@ -146,6 +155,22 @@ body{
                 justify-content: space-between;
                 align-items: flex-end;
 
+                &__validation__box{
+                    display: none;
+                    position: absolute;
+                    background: #99E2D0;
+                    border-radius: 0 15px 15px 0;
+                    right: 0px;
+                    padding: 0 13px;
+                    height: 100%;
+                    & > i {
+                        font-size: 30px;
+                        color: white;
+                        transform: rotate(180deg);
+                        animation: rotate 0.5s both;
+                    }
+                }
+
                 &__txt{
                     @include basic_flex_column;
                     height: 85px;
@@ -171,6 +196,18 @@ body{
                     font-weight: bold;
                     font-size: 1.2rem;
                 }
+            }
+            
+            &:hover &__infos__price {
+                padding-right: 70px;
+                transition: 0.5s ease ;
+            }
+            &:hover &__validation__box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: slide-left 0.5s ease ;
+                transform-origin: right;
             }
         }
     }
