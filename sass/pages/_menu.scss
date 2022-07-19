@@ -18,6 +18,15 @@
         }
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+            transform: rotate(180deg);
+        }
+}
+
 .appears-with-opacity {
     animation: opacity 1.5s both;
     transition: transform 330ms ease-in-out;
@@ -141,6 +150,7 @@ body{
             width: 100%;
             margin: 10px 0;
 
+            overflow: hidden;
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0px 9px 19px -12px rgba(0,0,0,0.3);
@@ -149,44 +159,63 @@ body{
 
             &__infos{
                 display: flex;
-                width: 100%;
+                width: 95%;
                 height: auto;
                 padding: 0 10px;
                 justify-content: space-between;
                 align-items: flex-end;
 
+                transition: all 330ms ease-in-out;
+
+                &:hover{
+                    width: calc(100% - 90px)
+                }
+
                 &__validation__box{
-                    display: none;
+                    display: flex;
                     position: absolute;
                     background: #99E2D0;
                     border-radius: 0 15px 15px 0;
-                    right: 0px;
+                    justify-content: center;
+                    align-items: center;
+                    right: -90px;
                     padding: 0 13px;
                     height: 100%;
-                    & > i {
+                    width: 60px;
+                    transition: all 330ms ease-in-out;
+
+                    &__check {
                         font-size: 30px;
                         color: white;
-                        transform: rotate(180deg);
-                        animation: rotate 0.5s both;
+                        transform: rotate(-180deg);
+                        transition: all 330ms ease-in-out;
                     }
                 }
 
                 &__txt{
                     @include basic_flex_column;
+                    display: absolute;
                     height: 85px;
+                    width: 80%;
                     justify-content: center;
 
+                    white-space: nowrap;
                     & > *{
                         margin: 2px 0;
                     }
 
                     & h4{
                         font-size: 1.4rem;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
 
                     & p{
                         font-size: 1.2rem;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
+
                 }
 
                 &__price{
@@ -195,19 +224,25 @@ body{
                     right: 15px;
                     font-weight: bold;
                     font-size: 1.2rem;
+                    transition: all 330ms ease-in-out;
                 }
-            }
-            
-            &:hover &__infos__price {
-                padding-right: 70px;
-                transition: 0.5s ease ;
-            }
-            &:hover &__validation__box {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                animation: slide-left 0.5s ease ;
-                transform-origin: right;
+
+                &:hover &__validation__box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transform: translate(-100%, 0);
+
+                    &__check{
+                        transform: rotate(0deg);
+                    }
+                }
+
+                // &:hover &__price {
+                //     animation: 0.5s ease-in-out ;
+                //     transform-origin: right;
+                //     transform: translate(-60px, 0);
+                // }
             }
         }
     }
