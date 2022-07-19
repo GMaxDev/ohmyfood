@@ -269,6 +269,12 @@ body{
             }
         }
     }
+
+    .footer__nav > ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (min-width:900px) and (max-width: 1400px){
@@ -282,5 +288,11 @@ body{
                 width: 49%;
             }
         }
+    }
+    
+    .footer__nav > ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
