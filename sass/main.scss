@@ -274,22 +274,24 @@ a{
             }
     
             &__info{
+                position: relative;
                 display: flex;
                 flex-direction: row;
                 height: 100px;
-                padding: 0 20px 0 10px;
+                width: 100%;
+                padding: 0 0px 0 10px;
                 justify-content: space-between;
                 align-items: center;
                 
                 &__text{
                     @include basic_flex_column;
-                    height: 100px;
+                    width: 100%;
                     justify-content: center;
                     padding: 0;
     
-                    & >*{
+                    & *{
                         margin: 0px;
-                        font-size: 1.5rem;
+                        font-size: 1.4rem;
                     }
     
                     & h4{
@@ -301,14 +303,32 @@ a{
                     }
                 }
 
+                &__heart{
+                    position: absolute;
+                    right: 40px;
+
+                    & .fas{
+                        color: transparent;
+                        position: absolute;
+                        height: 30px;
+                        top: -5px;
+                        right: 0px;
+                        opacity: 0;
+                        background: linear-gradient(to right top, $primary-color, $secondary_color);
+
+                        &:hover{
+                            opacity: 1;
+                            background: linear-gradient(to right top, $primary-color, $secondary_color);
+                            background-size: cover;
+
+                        }
+                    }
+                }
+                
+
                 & > i{
                     position: relative;
                     z-index: 1;
-                    &:hover {
-                        &::after {
-                            opacity: 1;
-                        }
-                    }
 
                     &::after {
                         content: "";
