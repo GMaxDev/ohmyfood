@@ -194,7 +194,7 @@ body{
 
                 &__txt{
                     @include basic_flex_column;
-                    display: absolute;
+                    // display: absolute;
                     height: 85px;
                     width: 80%;
                     justify-content: center;
