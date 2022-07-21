@@ -306,21 +306,17 @@ a{
                 &__heart{
                     position: absolute;
                     right: 40px;
+                    background-clip: text;
 
-                    & .fas{
-                        color: transparent;
-                        position: absolute;
-                        height: 30px;
-                        top: -5px;
-                        right: 0px;
-                        opacity: 0;
-                        background: linear-gradient(to right top, $primary-color, $secondary_color);
-
+                    & .fa-heart{
+                        font-size: 2rem;
                         &:hover{
-                            opacity: 1;
+                            color: transparent;
                             background: linear-gradient(to right top, $primary-color, $secondary_color);
-                            background-size: cover;
-
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            font-weight: 600;
+                            transition: all 200ms ease-in-out;
                         }
                     }
                 }
