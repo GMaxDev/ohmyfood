@@ -16,4 +16,9 @@
 
 @mixin bg_degrade_diagonale ($color_left, $color_right) {
     background: linear-gradient(to bottom right, $color_left, $color_right);
+
+    &:hover{
+        box-shadow: 0px 5px 29px 0px rgba(0,0,0,0.8);
+        background: linear-gradient(to bottom right, lighten($color_left, 3%), lighten($color_right, 3%));
+    }
 }
